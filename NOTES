@@ -1,0 +1,10 @@
+## Preparing the Project Pages
+
+- Created
+  => "index.js" (main page)
+  => "./pages/new-meetup/index.js" (Create meetup page)
+  => "./pages/[meetupId]/index.js" (Meetup details)
+
+**\*** "index.js" automatically takes the folder name as URL **\***
+Ex => "./pages/[meetupId]/index.js"
+=> [meetupId] = index.js
