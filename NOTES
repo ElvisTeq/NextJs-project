@@ -1,4 +1,4 @@
-## Preparing the Project Pages
+## 1 Preparing the Project Pages
 
 - Created
   => "index.js" (main page)
@@ -8,3 +8,19 @@
 **\*** "index.js" automatically takes the folder name as URL **\***
 Ex => "./pages/[meetupId]/index.js"
 => [meetupId] = index.js
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 2 Outputting a List of Meetups
+
+- "index.js"
+  => Created [DUMMY_DATA]
+  => Added <MeetupList.js /> component to JSX
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 3 Adding the New Meetup Form
+
+- "./pages/new-meetup"
+  => Added <NewMeetupForm /> component to JSX
+  => Created "addMeetupHandler" for <NewMeetupForm onAddMeetup={addMeetupHandler} />
