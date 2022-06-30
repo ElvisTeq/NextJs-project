@@ -24,3 +24,15 @@ Ex => "./pages/[meetupId]/index.js"
 - "./pages/new-meetup"
   => Added <NewMeetupForm /> component to JSX
   => Created "addMeetupHandler" for <NewMeetupForm onAddMeetup={addMeetupHandler} />
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 4 The "\_app.js" File & Layout Wrapper
+
+- "\_app.js"
+  => This is the root component (the top layer of the application)
+  => Wrapping <Layout> component (will be added to all the application)
+
+- "MainNavigation.js"
+  => import Link from 'next/link'
+  => For <Link href=''> to work
