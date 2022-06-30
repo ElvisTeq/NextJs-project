@@ -95,3 +95,21 @@ This runs on the server after deployment (ALso runs after every request)
 (Will not run in the client side)
 
 **\*** Has access to (req, res) **\***
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 10 Working with Params for SSG Data Fetching
+
+- "[meetupId]/index.js"
+  => Using "getStaticProps(context)" to get [meetupId]
+  => { const meetupId = context.params.meetupId }
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 11 Fixing Paths Err with "getStaticPaths" & Working with Fallback Pages
+
+- "[meetupId]/index.js"
+  => Using "getStaticPaths()"
+
+-------------------------------------------- export const getStaticPaths = () => { return { fallback: , paths: [ {params:{1}}, {params:{2}} ]} }
+Needs to be added together when using "getStaticProps(context)" to Pre-Define dynamic [params]
