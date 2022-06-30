@@ -29,8 +29,9 @@ export const getStaticProps = async () => {
   // fetch data from API
   return {
     props: {
-      meetups: DUMMY_MEETUPS,
+      meetups: DUMMY_MEETUPS, // props.meetups
     },
+    revalidate: 10, // To Revalidate/Replace "meetups" data if there's any changes every 10 secs
   };
 };
 
