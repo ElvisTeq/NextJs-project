@@ -20,8 +20,18 @@ const DUMMY_MEETUPS = [
 ];
 
 // <MeetupList> component expets "meetups" data as props
-const HomePage = () => {
-  return <MeetupList meetups={DUMMY_MEETUPS} />;
+const HomePage = (props) => {
+  return <MeetupList meetups={props.meetups} />;
+};
+
+// Runs Before Page-Load => needs return  { props: { anyName: Data } }
+export const getStaticProps = async () => {
+  // fetch data from API
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
 };
 
 export default HomePage;

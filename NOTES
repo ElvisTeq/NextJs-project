@@ -59,3 +59,15 @@ router.push('Location') // To redirect user
 
 - "[meetupId]/index.js"
   => Added <MeetupDetail /> component
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 7 Pre-Rendering in Next.Js / Data fetching for Static Pages
+
+- "./pages/index.js"
+  => Implemented "getStaticProps()" To get Data before Loading Page
+
+------------------------------------------------- export const getStaticProps() => { return { **_anyName_**: data } }
+(Only Works in Page Components) (Always returns { props: { **_anyName_**: Data } })
+Function to get data before running the Component Page
+<MeetupList meetups={props.anyName} />
