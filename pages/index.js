@@ -24,7 +24,23 @@ const HomePage = (props) => {
   return <MeetupList meetups={props.meetups} />;
 };
 
-// Runs Before Page-Load => needs return  { props: { anyName: Data } }
+/*
+// Runs on the server after deployment (ALso runs after every request) (has access to req, res)
+export const getServerSideProps = async (context) => {
+  const req = context.req;
+  const res = context.res;
+
+  // Fetch Data from API
+
+  return {
+    props: {
+      meetups: DUMMY_MEETUPS,
+    },
+  };
+};
+*/
+
+// Function Runs during the build process => needs return  { props: { anyName: Data } }
 export const getStaticProps = async () => {
   // fetch data from API
   return {

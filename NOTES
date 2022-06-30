@@ -69,7 +69,7 @@ router.push('Location') // To redirect user
 
 ------------------------------------------------- export const getStaticProps() => { return { **_anyName_**: data } }
 (Only Works in Page Components) (Always returns { props: { **_anyName_**: Data } })
-Function to get data before running the Component Page
+Function Runs during the build process
 <MeetupList meetups={props.anyName} />
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,6 +79,19 @@ Function to get data before running the Component Page
 ------------------------------------------------- npm run build
 To see our application details (pages, components, etc)
 
-------------------------------------------------- export const getStaticProps() => { return { **_anyName_**: data }, revalidatye: 10 }
-{return { **_anyName_**: data }, revalidatye: 10 }
+------------------------------------------------- export const getStaticProps = () => { return { **_anyName_**: data }, revalidatye: 10 }
+{return { **_anyName_**: data }, revalidate: 10 }
 To => Revalidate/Replace the data if there's any changes every 10 secs
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 9 Server-side Rendering (SSR) with "getServerSideProps"
+
+- "./pages/index.js"
+  => Implemented "getServerSideProps()" to get acces to (req, res)
+
+------------------------------------------------ export const getServerSideProps = () => { return { **_anyName_**: data } }
+This runs on the server after deployment (ALso runs after every request)
+(Will not run in the client side)
+
+**\*** Has access to (req, res) **\***
