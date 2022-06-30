@@ -48,3 +48,14 @@ Ex => "./pages/[meetupId]/index.js"
 ------------------------------------------------- import { useRouter } from "next/router";
 const router = useRouter()
 router.push('Location') // To redirect user
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 6 Adding Custom Components & CSS Modules
+
+- Created
+  => "MeetupDetails.js" Component
+  => "MeetupDetails.module.css"
+
+- "[meetupId]/index.js"
+  => Added <MeetupDetail /> component
