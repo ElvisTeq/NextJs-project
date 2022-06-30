@@ -36,3 +36,15 @@ Ex => "./pages/[meetupId]/index.js"
 - "MainNavigation.js"
   => import Link from 'next/link'
   => For <Link href=''> to work
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 5 Using Programmatic (Imperative) Navigation
+
+- "MeetupItem.js"
+  => { useRouter } ".push" to redirect user to MeetupDetail page
+  => Created a showDetailHandler() for the JSW <onClick={showDetailHandler}>
+
+------------------------------------------------- import { useRouter } from "next/router";
+const router = useRouter()
+router.push('Location') // To redirect user
