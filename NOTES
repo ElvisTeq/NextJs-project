@@ -113,3 +113,15 @@ This runs on the server after deployment (ALso runs after every request)
 
 -------------------------------------------- export const getStaticPaths = () => { return { fallback: , paths: [ {params:{1}}, {params:{2}} ]} }
 Needs to be added together when using "getStaticProps(context)" to Pre-Define dynamic [params]
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 12 Creating API Routes in Next.Js
+
+- Create Folder
+  => "./pages/api" (folder)
+
+- Create File (Name === URL We need to do API request)
+  -> "./pages/api/new-meetup.js" (file)
+
+**\*** The function inside the "./pages/api/new-meetup.js" will automatically run when URL hit ""/api/new-meetup"" **\***
