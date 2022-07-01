@@ -125,3 +125,31 @@ Needs to be added together when using "getStaticProps(context)" to Pre-Define dy
   -> "./pages/api/new-meetup.js" (file)
 
 **\*** The function inside the "./pages/api/new-meetup.js" will automatically run when URL hit ""/api/new-meetup"" **\***
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 13 Working with MongoDB
+
+- Set up MongoDB account
+
+- npm i mongodb
+
+- ""/api/new-meetup.js""
+  => implemented { MongoClient } To Connect to MongoDB, send/store Data to the API
+
+-------------------------------------------- import { MongoClient } from 'mongodb'
+
+-------------------------------------------- const **client** MongoClient.connect('link-from-mongogb')
+To connect out MongoDB account
+
+-------------------------------------------- const **db** = **client**.db()
+Method to Create Database
+
+-------------------------------------------- const anyName = **db**.collection('mongodb-collection-name')
+To get our collection/location were we going to store our data
+
+-------------------------------------------- const result = await meetupsCollection.insertOne(data);
+To insert data to our collection/location
+
+- "config.env" (to store important data)
+  => "process.env.DATA_FROM_FILE" (to get data value)
