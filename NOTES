@@ -121,10 +121,10 @@ Needs to be added together when using "getStaticProps(context)" to Pre-Define dy
 - Create Folder
   => "./pages/api" (folder)
 
-- Create File (Name === URL We need to do API request)
+- Create File
   -> "./pages/api/new-meetup.js" (file)
 
-**\*** The function inside the "./pages/api/new-meetup.js" will automatically run when URL hit ""/api/new-meetup"" **\***
+**\*** The function inside the "./pages/api/new-meetup.js" will run when "/api/new-meetup.js" receives a HTTP request **\***
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -163,3 +163,11 @@ To insert data to our collection/location
 - "/new-meetup/index.js"
   => "fetch()" Sending API request to our own API route "/api/new-meetup"
   => { useRouter } .push('') => to redirect user after submit
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 15 Getting Data from Database
+
+- "/pages/index.js"
+  => using { MongoClient } To Connecto to Database & Get data
+  => and { getStaticProps } To Pre render/fetch data before page loads (instead of Creating another API Route to fetch data)

@@ -1,25 +1,7 @@
+import { MongoClient } from "mongodb";
 import MeetupList from "../components/meetups/MeetupList";
 
-const DUMMY_MEETUPS = [
-  {
-    id: "m1",
-    title: "First Meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d3/Stadtbild_M%C3%BCnchen.jpg",
-    address: "Some address 5, 12345 a City",
-    description: "The first meetup",
-  },
-  {
-    id: "m2",
-    title: "Second Meetup",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d3/Stadtbild_M%C3%BCnchen.jpg",
-    address: "Some address 10, 23456 a City",
-    description: "The second meetup",
-  },
-];
-
-// <MeetupList> component expets "meetups" data as props
+// {props.meetups} comes from "getStaticProps"
 const HomePage = (props) => {
   return <MeetupList meetups={props.meetups} />;
 };
@@ -43,11 +25,34 @@ export const getServerSideProps = async (context) => {
 // Function Runs during the build process => needs return  { props: { anyName: Data } }
 export const getStaticProps = async () => {
   // fetch data from API
+  const password = process.env.DB_PASSWORD;
+
+  // Connecting to MongoDB DataBase
+  const client = await MongoClient.connect(
+    `mongodb+srv://kaheno1312:${password}@cluster0.7uoo5.mongodb.net/meetups?retryWrites=true&w=majority`
+  );
+
+  // Getting Database "meetups" collection
+  const db = client.db();
+  const meetupsCollection = db.collection("meetups");
+
+  // Get all Data into [Array]
+  const meetups = await meetupsCollection.find().toArray();
+
+  // Close Connection to MongoDB
+  client.close();
+
   return {
+    // {props.meetups} in JSX
     props: {
-      meetups: DUMMY_MEETUPS, // props.meetups
+      meetups: meetups.map((meetup) => ({
+        title: meetup.title,
+        address: meetup.address,
+        image: meetup.image,
+        id: meetup._id.toString(),
+      })),
     },
-    revalidate: 10, // To Revalidate/Replace "meetups" data if there's any changes every 10 secs
+    revalidate: 1, // To Revalidate/Replace "meetups" data if there's any changes every 1 secs
   };
 };
 

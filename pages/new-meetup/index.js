@@ -1,6 +1,5 @@
 // localhost:3000/new-meetup
 import { useRouter } from "next/router";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
 const NewMeetupPage = () => {
