@@ -151,5 +151,15 @@ To get our collection/location were we going to store our data
 -------------------------------------------- const result = await meetupsCollection.insertOne(data);
 To insert data to our collection/location
 
-- "config.env" (to store important data)
-  => "process.env.DATA_FROM_FILE" (to get data value)
+## Environment Variables in Next.js
+
+- ".eng.local" (File created)
+  => "process.env.DB_DATA_FROM_FILE" (to get data value)
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 14 Sending Http Request To Own API Routes
+
+- "/new-meetup/index.js"
+  => "fetch()" Sending API request to our own API route "/api/new-meetup"
+  => { useRouter } .push('') => to redirect user after submit

@@ -6,7 +6,11 @@ const handler = async (req, res) => {
   if (req.method === "POST") {
     const data = req.body; // Get data
 
-    const client = await MongoClient.connect(process.env.MONGO_USER); // Data from "config.env"
+    const password = process.env.DB_PASSWORD;
+
+    const client = await MongoClient.connect(
+      `mongodb+srv://kaheno1312:${password}@cluster0.7uoo5.mongodb.net/meetups?retryWrites=true&w=majority`
+    ); // Data from "config.env"
 
     // .db => Method To created our database as "meetups" (as we modified in "process.env.MONGO_USER")
     const db = client.db();
