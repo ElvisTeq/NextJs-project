@@ -210,3 +210,15 @@ To add <Head> into JSX
 
 - Add Network Access to everyone on MongoDB
   => Network Access (0.0.0.0) (everyone)
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 19 Using Fallback Pages & Re-deploying
+
+- in { getStaticPaths }
+  => if { fallback: false } only existing "meetupId" will work
+  => if { fallback: true } any "meetupId" will work (will return an empthy page if not exist)
+  => if { fallback: "blocking" } will load required "meetupId" before render website (if is not pre-defined or recently created)
+
+**\*** Versel **\***
+Will automatically make changes/re-deploy after we push to github

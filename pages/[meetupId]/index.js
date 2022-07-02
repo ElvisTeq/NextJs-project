@@ -44,7 +44,7 @@ export const getStaticPaths = async () => {
 
   // Setting [Params] => [_id]
   return {
-    fallback: false, // false (only existing "meetupId" will work)
+    fallback: "blocking", // will load required "meetupId" before render website (if is not pre-defined or recently created)
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
