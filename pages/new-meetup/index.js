@@ -1,6 +1,8 @@
 // localhost:3000/new-meetup
 import { useRouter } from "next/router";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
+import { Fragment } from "react";
+import Head from "next/head";
 
 const NewMeetupPage = () => {
   const router = useRouter(); // to redirect User
@@ -23,7 +25,18 @@ const NewMeetupPage = () => {
     // router.replace("/"); // Replace current URL (not able to go back)
   };
 
-  return <NewMeetupForm onAddMeetup={addMeetupHandler} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Add a New Meetup</title>
+        <meta
+          name="description"
+          content="Create networking opportunities by adding your own meetups"
+        />
+      </Head>
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    </Fragment>
+  );
 };
 
 export default NewMeetupPage;

@@ -183,3 +183,19 @@ To insert data to our collection/location
 
 ----------------------------------------------------- import { ObjectId } from "mongodb"
 To convert data into ID-Object (Format inside the MongoDB Database for the "\_id")
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 17 Adding "head" Metadata
+
+- "/pages/index.js"
+  => Implemented <Head></Head> To add <title> & <meta> To Home Page
+
+- "/pages/new-meetup/index.js"
+  => Implemented <Head></Head> To add <title> & <meta> Add Meetup Page
+
+- "[meetupId]/index.js"
+  => Implemented <Head></Head>, Dynamically added a <title> & <meta> Meetup Detail Page
+
+----------------------------------------------------- import Head from "next/head";
+To add <Head> into JSX
