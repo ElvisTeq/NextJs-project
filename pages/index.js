@@ -24,7 +24,6 @@ export const getServerSideProps = async (context) => {
 
 // Function Runs during the build process => needs return  { props: { anyName: Data } }
 export const getStaticProps = async () => {
-  // fetch data from API
   const password = process.env.DB_PASSWORD;
 
   // Connecting to MongoDB DataBase

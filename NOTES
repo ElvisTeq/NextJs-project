@@ -171,3 +171,15 @@ To insert data to our collection/location
 - "/pages/index.js"
   => using { MongoClient } To Connecto to Database & Get data
   => and { getStaticProps } To Pre render/fetch data before page loads (instead of Creating another API Route to fetch data)
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 16 Getting Meetup Details Data / Preparing Pages
+
+- "[meetupId]/index.js"
+  => { MongoClient } To Connecto to Database & Get data
+  => { getStaticPaths } To dynamically set our [meetupId] Params as [_id] To show meetup details
+  => { getStaticProps } To Get Data from Database by [_id] for the JSX to pre-render
+
+----------------------------------------------------- import { ObjectId } from "mongodb"
+To convert data into ID-Object (Format inside the MongoDB Database for the "\_id")
