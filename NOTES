@@ -199,3 +199,14 @@ To convert data into ID-Object (Format inside the MongoDB Database for the "\_id
 
 ----------------------------------------------------- import Head from "next/head";
 To add <Head> into JSX
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+## 18 Deploying Next.JS Projects
+
+- Using "Versel" to deploy our application (Best for Next.js)
+  => No need to "npm run build"
+  => Just link github account & repositories
+
+- Add Network Access to everyone on MongoDB
+  => Network Access (0.0.0.0) (everyone)
